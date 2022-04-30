@@ -3,6 +3,7 @@ const searchInput = document.querySelector('#search')
 const songsContainer = document.querySelector('#songs-container')
 const prevAndNextContainer = document.querySelector('#prev-and-next-container')
 
+
 const apiURL = `https://api.lyrics.ovh`
 
 const fetchData = async url => {
@@ -13,6 +14,7 @@ const fetchData = async url => {
 const getMoreSongs = async url => {
     const data = await fetchData(`https://cors-anywhere.herokuapp.com/${url}`)
     insertSongsIntoPage(data)
+    console.log(data)
 }
 
 const insertNextAndPrevButtons = ({ prev, next }) => {
@@ -23,6 +25,7 @@ const insertNextAndPrevButtons = ({ prev, next }) => {
 }
 
 const insertSongsIntoPage = ({data, prev, next}) => {
+    document.getElementsByClassName('songs-container')[0].style.padding = '20px';
     songsContainer.innerHTML = (data.map(({artist:{name}, title}) => `
     <li class='song'>
     <span class='song-artist'><b>${name}</b> - ${title}</span>
@@ -44,10 +47,10 @@ async function fetchSongs(term) {
 
 const handleFormSubmit = event => {
     event.preventDefault()
-    const searchTerm = searchInput.value.trim()
+    let searchTerm = searchInput.value.trim()
     searchInput.value=''
     searchInput.focus()
-
+    
     if (!searchTerm) {
         songsContainer.innerHTML = `<li class='warning-message'>Por favor, digite um termo válido</li>`
         return
@@ -57,7 +60,9 @@ const handleFormSubmit = event => {
 
 form.addEventListener('submit', handleFormSubmit)
 
+
 function insertLyricsIntoPage({ lyrics, artist, songsTitle }) {
+    
     songsContainer.innerHTML = `
     <li class='lyrics-container'>
         <h2>
@@ -80,7 +85,7 @@ const handleSongsContainerClick =  event => {
         const artist = clickedElement.getAttribute('data-artist')
         const songsTitle = clickedElement.getAttribute('data-song-title')
 
-        prevAndNextContainer.innerHTML ='';
+        prevAndNextContainer.innerHTML =`<button class='btn' onclick='fetchSongs()'>Voltar</button>`
         fetchLyrics(artist, songsTitle)
     }
 }

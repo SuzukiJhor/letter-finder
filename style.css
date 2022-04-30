@@ -1,147 +1,152 @@
-*, 
+*,
 *:after,
 *:before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 body {
-  background-color: #10161B;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
+    background-image: url('https://scrubbing.in/wp-content/uploads/2020/03/mood-boost-music-1.jpg');
+    background-repeat: repeat;
+    background-size: 100%;
+    background-color: #10161B;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 button:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 input:focus,
 button:focus {
-  outline: none;
+    outline: none;
 }
 
 header {
-  background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 100px 0;
-  position: relative;
+    background-image: url('https://www.jukebox.com.pt/site/site_pt/wp-content/uploads/2014/05/cabecalho_pag_interna31.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    position: relative;
 }
 
 header::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, .4);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .4);
 }
 
 header * {
-  z-index: 1;
+    z-index: 1;
 }
 
 header h1 {
-  margin: 0 0 30px;
+    margin: 0 0 30px;
 }
 
 form {
-  position: relative;
-  width: 500px;
-  max-width: 100%;
+    position: relative;
+    width: 500px;
+    max-width: 100%;
 }
 
 form input {
-  border: 0;
-  border-radius: 50px;
-  font-size: 16px;
-  padding: 15px 30px;
-  width: 100%;
+    border: 0;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 15px 30px;
+    width: 100%;
 }
 
 form button {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  background-color: #8d56fd;
-  border: 0;
-  border-radius: 50px;
-  color: #fff;
-  font-size: 16px;
-  padding: 13px 30px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: rgb(10, 151, 128);
+    border: 0;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 16px;
+    padding: 13px 30px;
 }
 
 .btn {
-  background-color: #8d56fd;
-  border: 0;
-  border-radius: 10px;
-  color: #fff;
-  padding: 4px 10px;
+    background-color: rgb(10, 151, 128);
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    padding: 4px 10px;
 }
 
 .songs-container {
-  list-style-type: none;
-  padding: 0;
-  margin: 30px auto;
-  max-width: 100%;
-  width: 500px;
-  background-color: #10161B;
+    list-style-type: none;
+    padding: 0px;
+    margin: 40px auto;
+    max-width: 100%;
+    width: 700px;
+    background-color: #10161B;
+    border-radius: 25px;
 }
 
 .song {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding-top: 10px
 }
 
 .prev-and-next-container h2 {
-  font-weight: 300;
+    font-weight: 300;
 }
 
 .prev-and-next-container {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .prev-and-next-container button {
-  transform: scale(1.3);
-  margin: 15px;
+    transform: scale(1.3);
+    margin: 15px;
 }
 
 .warning-message {
-  color: #EA2234;
-  text-align: center;
+    color: #EA2234;
+    text-align: center;
 }
 
 .song-artist {
-  color: white;
-  opacity: .4;
-  max-width: 400px;
+    color: white;
+    opacity: .4;
+    max-width: 400px;
 }
 
 .lyrics-container {
-  color: white;
-  opacity: .4;
+    color: white;
+    opacity: .4;
 }
 
 .lyrics {
-  margin-top: 20px;
-  line-height: 1.5;
+    margin-top: 20px;
+    line-height: 1.5;
 }
