@@ -1,4 +1,4 @@
-# :minidisc: letter-finder
+# :musical_note: letter-finder
 Projeto para buscar as letras das suas musicas favoritas. </br>
 Pensou naquela música supimpa mas não lembra a letra? bom, o Letter-Finder esta aqui para te ajudar.
 
