@@ -11,10 +11,11 @@ const fetchData = async url => {
     return await response.json()
 }
 
-const getMoreSongs = async url => {
+const getMoreSongs = async (url) => {
     const data = await fetchData(`https://cors-anywhere.herokuapp.com/${url}`)
-    insertSongsIntoPage(data)
     console.log(data)
+    insertSongsIntoPage(data)
+    
 }
 
 const insertNextAndPrevButtons = ({ prev, next }) => {
@@ -33,9 +34,9 @@ const insertSongsIntoPage = ({data, prev, next}) => {
     </li>
     `).join(''))
 
-        if (prev || next) {
-            insertNextAndPrevButtons({prev, next})
-             return
+    if (prev || next) {
+        insertNextAndPrevButtons({prev, next})
+        return
     }
     prevAndNextContainer.innerHTML= ''
 }
@@ -58,8 +59,6 @@ const handleFormSubmit = event => {
     fetchSongs(searchTerm)
 }
 
-form.addEventListener('submit', handleFormSubmit)
-
 
 function insertLyricsIntoPage({ lyrics, artist, songsTitle }) {
     
@@ -74,20 +73,23 @@ function insertLyricsIntoPage({ lyrics, artist, songsTitle }) {
 
 const fetchLyrics = async (artist, songsTitle) =>{
     const data = await fetchData(`${apiURL}/v1/${artist}/${songsTitle}`)
+    console.log(data)
     const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '</br>')
     insertLyricsIntoPage({lyrics, artist, songsTitle})
 }
 
 const handleSongsContainerClick =  event => {
+    event.preventDefault()
     const clickedElement = event.target
 
     if(clickedElement.tagName ==='BUTTON'){
         const artist = clickedElement.getAttribute('data-artist')
         const songsTitle = clickedElement.getAttribute('data-song-title')
-
         prevAndNextContainer.innerHTML =`<button class='btn' onclick='fetchSongs()'>Voltar</button>`
+
         fetchLyrics(artist, songsTitle)
     }
 }
 
+form.addEventListener('submit', handleFormSubmit)
 songsContainer.addEventListener('click', handleSongsContainerClick)
